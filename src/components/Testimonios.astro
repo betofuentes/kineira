@@ -1,0 +1,63 @@
+---
+const testimonios = [
+  {
+    nombre: 'Mamá de Sofía, 8 meses',
+    texto: 'Iris es increíble. Sofía llegó con retraso en el desarrollo motor y en pocos meses ya está gateando. Además, nos enseñó cómo estimularla en casa. ¡Eternamente agradecidas!',
+    color: 'bg-amarillo/20',
+    emoji: '💛',
+  },
+  {
+    nombre: 'Papá de Mateo, 2 años',
+    texto: 'Lo que más me sorprendió fue la paciencia y el amor con que trata a Mateo. Cada sesión es una aventura para él. Los resultados hablan solos: ya camina sin apoyo.',
+    color: 'bg-azul/20',
+    emoji: '💙',
+  },
+  {
+    nombre: 'Mamá de Valentina, 4 años',
+    texto: 'Llegué muy angustiada y Iris me dio calma y herramientas. No solo trata a los niños, también acompaña a los papás. Eso es algo que no encuentras en todos lados.',
+    color: 'bg-lavanda/30',
+    emoji: '💜',
+  },
+  {
+    nombre: 'Mamá de Lucas, 1 año',
+    texto: 'Kineira es un espacio mágico. Lucas llora cuando se termina la sesión porque quiere quedarse más. Iris tiene un don natural con los niños.',
+    color: 'bg-durazno/30',
+    emoji: '🧡',
+  },
+];
+---
+
+<section id="testimonios" class="py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <span class="inline-block bg-lavanda/30 text-texto font-semibold text-sm px-4 py-1.5 rounded-full mb-4">
+        Testimonios
+      </span>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-texto mb-4">
+        Lo que dicen las familias
+      </h2>
+      <p class="text-texto-suave max-w-xl mx-auto">
+        Nada nos llena más de orgullo que el progreso de los niños y la confianza de sus familias.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-6">
+      {testimonios.map((t) => (
+        <div class={`${t.color} rounded-3xl p-8`}>
+          <div class="flex items-center gap-1 mb-4">
+            {[...Array(5)].map(() => (
+              <span class="text-amarillo text-lg">★</span>
+            ))}
+          </div>
+          <p class="text-texto leading-relaxed mb-6 text-base italic">"{t.texto}"</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-xl shadow-sm">
+              {t.emoji}
+            </div>
+            <p class="font-semibold text-texto text-sm">{t.nombre}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

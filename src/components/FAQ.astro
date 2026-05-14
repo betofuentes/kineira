@@ -1,0 +1,77 @@
+---
+const preguntas = [
+  {
+    pregunta: '¿A partir de qué edad puedo llevar a mi bebé?',
+    respuesta: 'Desde el nacimiento. La fisioterapia neonatal y la estimulación temprana se pueden iniciar desde los primeros días de vida, especialmente en bebés prematuros o con factores de riesgo.',
+  },
+  {
+    pregunta: '¿Cómo sé si mi hijo necesita fisioterapia?',
+    respuesta: 'Si observas retrasos en hitos del desarrollo (sostén de cabeza, volteos, gateo, marcha), asimetría en los movimientos, hipertonía o hipotonía muscular, dificultades sensoriales o tras un diagnóstico médico, es recomendable una evaluación.',
+  },
+  {
+    pregunta: '¿Cuánto dura una sesión y cuántas necesitaré?',
+    respuesta: 'Las sesiones duran entre 45 y 60 minutos. La frecuencia y duración del tratamiento depende de cada niño y sus necesidades. Tras la evaluación inicial se diseña un plan personalizado.',
+  },
+  {
+    pregunta: '¿Los papás pueden estar presentes durante la sesión?',
+    respuesta: '¡Sí, y es fundamental! La participación de los padres en el proceso es parte del tratamiento. Les enseñamos técnicas y ejercicios para continuar el trabajo en casa.',
+  },
+  {
+    pregunta: '¿Cómo agendo una primera cita?',
+    respuesta: 'Puedes contactarnos directamente por WhatsApp. Te responderemos con horarios disponibles y te daremos toda la información que necesitas para la primera visita.',
+  },
+];
+---
+
+<section id="faq" class="py-24 bg-crema">
+  <div class="max-w-3xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <span class="inline-block bg-coral/20 text-texto font-semibold text-sm px-4 py-1.5 rounded-full mb-4">
+        Preguntas frecuentes
+      </span>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-texto mb-4">
+        Dudas comunes
+      </h2>
+      <p class="text-texto-suave">
+        Resolvemos las preguntas que más nos hacen las familias.
+      </p>
+    </div>
+
+    <div class="flex flex-col gap-4" id="faq-list">
+      {preguntas.map((item, i) => (
+        <div class="bg-white rounded-2xl shadow-sm overflow-hidden">
+          <button
+            class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-semibold text-texto hover:bg-amarillo/10 transition-colors"
+            data-index={i}
+          >
+            <span>{item.pregunta}</span>
+            <svg class="faq-icon w-5 h-5 flex-shrink-0 text-texto-suave transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="faq-answer hidden px-6 pb-5 text-texto-suave text-sm leading-relaxed">
+            {item.respuesta}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.faq-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const answer = btn.nextElementSibling as HTMLElement;
+      const icon = btn.querySelector('.faq-icon') as HTMLElement;
+      const isOpen = !answer.classList.contains('hidden');
+
+      document.querySelectorAll('.faq-answer').forEach((a) => a.classList.add('hidden'));
+      document.querySelectorAll('.faq-icon').forEach((i) => i.classList.remove('rotate-180'));
+
+      if (!isOpen) {
+        answer.classList.remove('hidden');
+        icon.classList.add('rotate-180');
+      }
+    });
+  });
+</script>

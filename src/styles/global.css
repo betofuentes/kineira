@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme {
+  --color-amarillo: #f9df5d;
+  --color-crema: #f7f1ed;
+  --color-lavanda: #d8c4f7;
+  --color-azul: #81c2f7;
+  --color-coral: #f97d7d;
+  --color-durazno: #ffc599;
+  --color-texto: #2d2d2d;
+  --color-texto-suave: #6b6b6b;
+
+  --font-sans: 'Nunito', system-ui, sans-serif;
+  --font-display: 'Nunito', system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-crema text-texto font-sans;
+  }
+}

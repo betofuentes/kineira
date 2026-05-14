@@ -1,0 +1,81 @@
+---
+const servicios = [
+  {
+    icono: '🧠',
+    color: 'bg-azul/20',
+    titulo: 'Neurodesarrollo',
+    desc: 'Evaluación y tratamiento de alteraciones en el desarrollo neurológico del bebé y el niño, con enfoque en hitos motores, sensorial y cognitivo.',
+  },
+  {
+    icono: '🍼',
+    color: 'bg-amarillo/30',
+    titulo: 'Fisioterapia neonatal',
+    desc: 'Atención especializada para recién nacidos y bebés prematuros, estimulación temprana y manejo postural desde los primeros días de vida.',
+  },
+  {
+    icono: '🦶',
+    color: 'bg-coral/20',
+    titulo: 'Desarrollo motor',
+    desc: 'Intervención en retrasos en el gateo, la marcha y el equilibrio. Fortalecimiento muscular y coordinación adaptada a cada edad.',
+  },
+  {
+    icono: '🌀',
+    color: 'bg-lavanda/30',
+    titulo: 'Integración sensorial',
+    desc: 'Terapia para niños con hipersensibilidad, dificultades de procesamiento sensorial o hipotonía, en un ambiente lúdico y seguro.',
+  },
+  {
+    icono: '🏃',
+    color: 'bg-durazno/30',
+    titulo: 'Rehabilitación pediátrica',
+    desc: 'Recuperación tras cirugías, lesiones o condiciones crónicas como parálisis cerebral, espina bífida y otras patologías neurológicas.',
+  },
+  {
+    icono: '👨‍👩‍👧',
+    color: 'bg-azul/20',
+    titulo: 'Orientación a padres',
+    desc: 'Asesoría y herramientas prácticas para que la familia pueda acompañar el desarrollo en casa de forma activa y efectiva.',
+  },
+];
+---
+
+<section id="servicios" class="py-24 bg-crema relative overflow-hidden">
+  <div class="absolute bottom-0 left-0 w-72 h-72 bg-amarillo/20 rounded-full blur-3xl pointer-events-none -translate-x-20 translate-y-20"></div>
+
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <span class="inline-block bg-coral/20 text-texto font-semibold text-sm px-4 py-1.5 rounded-full mb-4">
+        Servicios
+      </span>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-texto mb-4">
+        ¿En qué podemos ayudarte?
+      </h2>
+      <p class="text-texto-suave max-w-xl mx-auto text-base leading-relaxed">
+        Ofrecemos atención integral para bebés y niños, desde evaluación hasta tratamiento especializado con un enfoque cercano y basado en evidencia.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {servicios.map((s) => (
+        <div class="bg-white rounded-3xl p-6 shadow-sm hover:shadow-md transition-shadow duration-200 group">
+          <div class={`w-14 h-14 ${s.color} rounded-2xl flex items-center justify-center text-2xl mb-5 group-hover:scale-110 transition-transform duration-200`}>
+            {s.icono}
+          </div>
+          <h3 class="font-bold text-texto text-lg mb-2">{s.titulo}</h3>
+          <p class="text-texto-suave text-sm leading-relaxed">{s.desc}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="text-center mt-12">
+      <a
+        href="https://wa.me/1234567890?text=Hola%20Iris%2C%20quisiera%20saber%20m%C3%A1s%20sobre%20los%20servicios%20de%20Kineira"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 bg-amarillo hover:bg-amarillo/80 text-texto font-bold px-8 py-4 rounded-full transition-all duration-200 shadow-md hover:shadow-lg"
+      >
+        Consultar sobre un servicio
+      </a>
+    </div>
+  </div>
+</section>

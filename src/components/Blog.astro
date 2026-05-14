@@ -1,0 +1,71 @@
+---
+const articulos = [
+  {
+    tag: 'Neurodesarrollo',
+    tagColor: 'bg-azul/30',
+    titulo: '¿Qué es el neurodesarrollo y por qué es tan importante en los primeros años?',
+    descripcion: 'Los primeros 1000 días de vida son cruciales para el desarrollo cerebral. Te explicamos qué es el neurodesarrollo y cómo puedes estimularlo en casa.',
+    fecha: 'Mayo 2025',
+    emoji: '🧠',
+  },
+  {
+    tag: 'Desarrollo motor',
+    tagColor: 'bg-amarillo/40',
+    titulo: 'Hitos del desarrollo motor de 0 a 12 meses: qué esperar en cada etapa',
+    descripcion: 'Guía completa sobre los movimientos que tu bebé debería lograr mes a mes, y cuándo es recomendable consultar con un especialista.',
+    fecha: 'Abril 2025',
+    emoji: '🍼',
+  },
+  {
+    tag: 'Estimulación',
+    tagColor: 'bg-durazno/40',
+    titulo: '5 actividades de estimulación temprana que puedes hacer en casa hoy',
+    descripcion: 'No necesitas materiales especiales: con objetos cotidianos puedes favorecer el desarrollo sensorial y motor de tu bebé de forma lúdica.',
+    fecha: 'Marzo 2025',
+    emoji: '🌱',
+  },
+];
+---
+
+<section id="blog" class="py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-16">
+      <div>
+        <span class="inline-block bg-azul/20 text-texto font-semibold text-sm px-4 py-1.5 rounded-full mb-4">
+          Blog
+        </span>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-texto">
+          Recursos para familias
+        </h2>
+      </div>
+      <p class="text-texto-suave max-w-sm text-sm leading-relaxed">
+        Artículos sobre fisioterapia pediátrica, neurodesarrollo y tips para acompañar a tu hijo en casa.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      {articulos.map((a) => (
+        <article class="bg-crema rounded-3xl overflow-hidden hover:shadow-md transition-shadow duration-200 group cursor-pointer">
+          <div class="h-48 bg-gradient-to-br from-crema to-amarillo/20 flex items-center justify-center text-6xl group-hover:scale-105 transition-transform duration-300">
+            {a.emoji}
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-3">
+              <span class={`${a.tagColor} text-texto text-xs font-semibold px-3 py-1 rounded-full`}>
+                {a.tag}
+              </span>
+              <span class="text-texto-suave text-xs">{a.fecha}</span>
+            </div>
+            <h3 class="font-bold text-texto text-base leading-snug mb-3 group-hover:text-azul transition-colors">
+              {a.titulo}
+            </h3>
+            <p class="text-texto-suave text-sm leading-relaxed">{a.descripcion}</p>
+            <p class="mt-4 text-sm font-semibold text-texto flex items-center gap-1 group-hover:gap-2 transition-all">
+              Leer artículo <span>→</span>
+            </p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
