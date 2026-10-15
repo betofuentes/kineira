@@ -1,0 +1,49 @@
+---
+const maps = 'https://maps.app.goo.gl/gJ5L9AcB6cCu92M38';
+const embed = 'https://maps.google.com/maps?q=25.7867097,-100.2593765&z=17&output=embed';
+---
+
+<section id="ubicacion" class="py-24 bg-crema">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-12">
+      <span class="inline-block bg-coral/20 text-texto font-semibold text-sm px-4 py-1.5 rounded-full mb-6">
+        Ubicación
+      </span>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-texto mb-4">Encuéntranos fácilmente</h2>
+      <p class="text-texto-suave max-w-xl mx-auto">
+        Visítanos en Kineira, un espacio pensado para que tu hijo se sienta seguro y a gusto.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8 items-stretch">
+      <div class="md:col-span-2 rounded-3xl overflow-hidden shadow-xl h-96 bg-white">
+        <iframe
+          src={embed}
+          title="Mapa de ubicación de Kineira - Fisioterapia y Neurodesarrollo"
+          class="w-full h-full border-0"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen
+        ></iframe>
+      </div>
+
+      <div class="bg-white rounded-3xl shadow-md p-8 flex flex-col justify-between gap-6">
+        <div>
+          <p class="font-bold text-texto text-lg">Kineira</p>
+          <p class="text-texto-suave text-sm mt-1">Fisioterapia y Neurodesarrollo</p>
+          <p class="text-texto-suave text-sm mt-6">
+            Lunes a viernes: 8:00 – 17:00<br />Sábados: 9:00 – 13:00
+          </p>
+        </div>
+        <a
+          href={maps}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-2 bg-amarillo hover:bg-amarillo/80 text-texto font-bold px-6 py-3 rounded-full transition-all duration-200 shadow-md hover:shadow-lg"
+        >
+          📍 Cómo llegar
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
