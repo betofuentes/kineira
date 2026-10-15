@@ -1,4 +1,5 @@
 ---
+const posts = ['Dd-HoykNvmf', 'Dd7L08LGAZE', 'Ddr8sIIGAZ7', 'Dc2EpazCC9P'];
 ---
 
 <section id="instagram" class="py-16 bg-crema">
@@ -18,22 +19,16 @@
       <p class="text-texto-suave mt-2 text-sm">Síguenos en Instagram para tips de neurodesarrollo y estimulación</p>
     </div>
 
-    <!-- Instagram embed placeholder – replace with actual Elfsight or similar widget -->
-    <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2">
-      {[...Array(6)].map((_, i) => {
-        const colors = ['bg-amarillo/30', 'bg-azul/30', 'bg-coral/20', 'bg-lavanda/30', 'bg-durazno/30', 'bg-amarillo/20'];
-        const emojis = ['🧠', '🍼', '🌱', '💛', '🦶', '👶'];
-        return (
-          <a
-            href="https://instagram.com/kineira.fisio"
-            target="_blank"
-            rel="noopener noreferrer"
-            class={`${colors[i]} aspect-square rounded-2xl flex items-center justify-center text-4xl hover:scale-105 transition-transform duration-200`}
-          >
-            {emojis[i]}
-          </a>
-        );
-      })}
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      {posts.map((id) => (
+        <iframe
+          src={`https://www.instagram.com/p/${id}/embed`}
+          title="Publicación de Instagram de Kineira"
+          class="w-full h-[480px] rounded-2xl bg-white border-0 shadow-md"
+          loading="lazy"
+          scrolling="no"
+        ></iframe>
+      ))}
     </div>
 
     <div class="text-center mt-8">
